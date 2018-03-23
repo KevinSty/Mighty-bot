@@ -70,7 +70,7 @@ bot.on('ready', function() {
                         "**reverse** : Répéte à l'envers et supprime le message de l'utilisateur \n" +
                         "**roulette** : Choisi quelqu'un de manière random \n" +
                         "**say** : Répéte et supprime le message de l'utilisateur \n" +
-						"**send dossier** : Envoie des dossiers pour la commande dossier \n" +
+			"**send dossier** : Envoie des dossiers pour la commande dossier \n" +
                         "**sexy** : Donne le classement des personnes sexy \n" +
                         "**spank** : Met une fessée \n" +
                         "**stare** : Observe \n"+
@@ -173,7 +173,7 @@ bot.on('ready', function() {
                     break;
                 } else {
 
-                    if(args[1].charAt(1) !== "@" || args[1].length !== 21) {
+                    if(args[1].charAt(1) !== "@") {
                         avatar = message.author.avatarURL;
                         name = message.author.username;
                     } else {
@@ -607,13 +607,13 @@ bot.on('ready', function() {
                     break;
                 }
 
-                if(args[1].charAt(1) === "@" && args[1].length === 21) {
+                if(args[1].charAt(1) === "@") {
                     id = args[1];
                     id = id.substring(2, id.length - 1);
                     args[1] = id;
                     args[1] = bot.users.get(args[1]).username;
                 }
-                if(args[2].charAt(1) === "@" && args[2].length === 21) {
+                if(args[2].charAt(1) === "@") {
                     id = args[2];
                     id = id.substring(2, id.length - 1);
                     args[2] = id;
@@ -737,7 +737,7 @@ bot.on('ready', function() {
                     break;
                 } else {
 
-                    if(args[1].charAt(1) !== "@" || args[1].length !== 21) {
+                    if(args[1].charAt(1) !== "@") {
                         if(!data[message.author.id]) {
                             data[message.author.id] = {
                                 money: 0,
