@@ -311,7 +311,7 @@ bot.on('ready', function() {
                     titleHug = "Mighty-bot hug " + message.author.username;
                 } else {
 
-                    if(args[0].charAt(1) === "@" && args[0].length === 19) {
+                    if(args[0].charAt(1) === "@") {
                         id = args[0];
                         id = id.substring(2, id.length - 1);
                         args[0] = id;
@@ -337,7 +337,7 @@ bot.on('ready', function() {
                     titleKiss = "Mighty-bot kiss " + message.author.username;
                 } else {
 
-                    if(args[0].charAt(1) === "@" && args[0].length === 21) {
+                    if(args[0].charAt(1) === "@") {
                         id = args[0];
                         id = id.substring(2, id.length - 1);
                         args[0] = id;
@@ -363,7 +363,7 @@ bot.on('ready', function() {
                     titlePat = "Mighty-bot pat " + message.author.username;
                 } else {
 
-                    if(args[0].charAt(1) === "@" && args[0].length === 21) {
+                    if(args[0].charAt(1) === "@") {
                         id = args[0];
                         id = id.substring(2, id.length - 1);
                         args[0] = id;
@@ -389,7 +389,7 @@ bot.on('ready', function() {
                     titlePunch = "Mighty-bot punch " + message.author.username;
                 } else {
 
-                    if(args[0].charAt(1) === "@" && args[0].length === 21) {
+                    if(args[0].charAt(1) === "@") {
                         id = args[0];
                         id = id.substring(2, id.length - 1);
                         args[0] = id;
@@ -415,7 +415,7 @@ bot.on('ready', function() {
                     titleKill = "Mighty-bot kill " + message.author.username;
                 } else {
 
-                    if(args[0].charAt(1) === "@" && args[0].length === 21) {
+                    if(args[0].charAt(1) === "@") {
                         id = args[0];
                         id = id.substring(2, id.length - 1);
                         args[0] = id;
@@ -441,7 +441,7 @@ bot.on('ready', function() {
                     titleSpank = "Mighty-bot spank " + message.author.username;
                 } else {
 
-                    if(args[0].charAt(1) === "@" && args[0].length === 21) {
+                    if(args[0].charAt(1) === "@") {
                         id = args[0];
                         id = id.substring(2, id.length - 1);
                         args[0] = id;
@@ -467,7 +467,7 @@ bot.on('ready', function() {
                     titleStare = "Mighty-bot stare at " + message.author.username;
                 } else {
 
-                    if(args[0].charAt(1) === "@" && args[0].length === 21) {
+                    if(args[0].charAt(1) === "@") {
                         id = args[0];
                         id = id.substring(2, id.length - 1);
                         args[0] = id;
@@ -493,7 +493,7 @@ bot.on('ready', function() {
                     titleLick = "Mighty-bot lick " + message.author.username;
                 } else {
 
-                    if(args[0].charAt(1) === "@" && args[0].length === 21) {
+                    if(args[0].charAt(1) === "@") {
                         id = args[0];
                         id = id.substring(2, id.length - 1);
                         args[0] = id;
@@ -519,7 +519,7 @@ bot.on('ready', function() {
                     titleTickle = "Mighty-bot tickle " + message.author.username;
                 } else {
 
-                    if(args[0].charAt(1) === "@" && args[0].length === 21) {
+                    if(args[0].charAt(1) === "@") {
                         id = args[0];
                         id = id.substring(2, id.length - 1);
                         args[0] = id;
@@ -545,7 +545,7 @@ bot.on('ready', function() {
                     titleBite = "Mighty-bot bite " + message.author.username;
                 } else {
 
-                    if(args[0].charAt(1) === "@" && args[0].length === 21) {
+                    if(args[0].charAt(1) === "@") {
                         id = args[0];
                         id = id.substring(2, id.length - 1);
                         args[0] = id;
@@ -568,7 +568,6 @@ bot.on('ready', function() {
                 classement = ["1. " + message.guild.owner.user.tag];
                 sexy = [];
                 message.guild.members.map(m=>sexy.push(m.user.tag));
-                console.log(sexy);
 
                 for(i = 1; i < message.guild.members.size ; i++) {
                     p = Math.floor((Math.random() * sexy.length));
