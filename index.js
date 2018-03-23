@@ -26,7 +26,7 @@ const dossier = require("./json/dossier.json");
 
 bot.on('ready', function() {
    // bot.user.setAvatar('./avatar.png').catch(console.error);
-    bot.user.setActivity('tuer des enfants (' + config.prefix 'help)').catch(console.error);
+    bot.user.setActivity('tuer des enfants (' + config.prefix + 'help)').catch(console.error);
 
 })
 
