@@ -21,7 +21,7 @@ const data = require("./json/data.json");
 const dossier = require("./json/dossier.json");
 
 
-const mal = popura(config.malUsername, config.malPassword);
+//const mal = popura(config.malUsername, config.malPassword);
 
 
 bot.on('ready', function() {
@@ -858,4 +858,4 @@ bot.on('ready', function() {
 });
 
 
-bot.login(config.token);
+bot.login(process.env.TOKEN);
