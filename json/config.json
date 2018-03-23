@@ -1,6 +1,4 @@
 {
   "token"  : process.env.TOKEN,
-  "prefix" : "$",
-  "malUsername":process.env.USERNAME,
-  "malPassword":process.env.PASSWORD
+  "prefix" : "$"
 }
