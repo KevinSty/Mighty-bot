@@ -3,6 +3,8 @@ const bot = new Discord.Client();
 const fs = require('fs');
 const moment = require('moment');
 const popura = require('popura');
+//const mal = popura(config.malUsername, config.malPassword);
+const nodemailer = require('nodemailer');
 
 //require les fichiers json
 const config = require("./json/config.json");
@@ -19,9 +21,6 @@ const bite = require("./json/bite.json");
 const hunter = require("./json/hunter.json");
 const data = require("./json/data.json");
 const dossier = require("./json/dossier.json");
-
-
-//const mal = popura(config.malUsername, config.malPassword);
 
 
 bot.on('ready', function() {
@@ -42,6 +41,52 @@ bot.on('ready', function() {
             //supprime tout les first
             case "first":
                 message.delete().catch(console.error);
+                break;
+
+            //envoie un mail contenant dossier.json et data.json
+            case config.prefix + "save":
+
+                if (message.author.id === "341378428072624128") {
+                    let transporter = nodemailer.createTransport({
+                        service: 'Hotmail',
+                        auth: {
+                            user: config.mail,
+                            pass: config.passmail
+                        }
+                    });
+
+                    if (args[1] === "dossier") {
+                        let mailOptions = {
+                            from: config.mail,
+                            to: config.mail,
+                            subject: 'dossier.json',
+                            text: JSON.stringify(dossier)
+                        };
+
+                        transporter.sendMail(mailOptions, function (error, info) {
+                            if (error) {
+                                console.log(error);
+                            } else {
+                                console.log('Email sent: ' + info.response);
+                            }
+                        });
+                    } else if (args[1] === "data") {
+                        let mailOptions = {
+                            from: config.mail,
+                            to: config.mail,
+                            subject: 'data.json',
+                            text: JSON.stringify(data)
+                        };
+
+                        transporter.sendMail(mailOptions, function (error, info) {
+                            if (error) {
+                                console.log(error);
+                            } else {
+                                console.log('Email sent: ' + info.response);
+                            }
+                        });
+                    } else { message.channel.send("arguments manquant")}
+                } else { message.channel.send("Seul <@341378428072624128> peut faire cette commande")}
                 break;
 
             //indique les différentes commandes
@@ -70,7 +115,7 @@ bot.on('ready', function() {
                         "**reverse** : Répéte à l'envers et supprime le message de l'utilisateur \n" +
                         "**roulette** : Choisi quelqu'un de manière random \n" +
                         "**say** : Répéte et supprime le message de l'utilisateur \n" +
-			"**send dossier** : Envoie des dossiers pour la commande dossier \n" +
+			            "**send dossier** : Envoie des dossiers pour la commande dossier \n" +
                         "**sexy** : Donne le classement des personnes sexy \n" +
                         "**spank** : Met une fessée \n" +
                         "**stare** : Observe \n"+
@@ -287,13 +332,13 @@ bot.on('ready', function() {
 
                     if (duel === "Bravo") {
                         message.reply("Bravo, tu as gagné " + (2 * pari) + " :dollar:");
-			data[message.author.id].money -= pari;    
+			            data[message.author.id].money -= pari;
                         data[message.author.id].money += (2*pari);
                         fs.writeFile("./json/data.json", JSON.stringify(data));
                     } else if (duel === "Match nul") {
                         message.reply("Dommage, tu ne gagnes rien");
                     } else {
-			data[message.author.id].money -= pari;
+			            data[message.author.id].money -= pari;
                     	fs.writeFile("./json/data.json", JSON.stringify(data));    
                         message.reply("Send nudes et je te laisse gagner")
                     }
@@ -694,18 +739,20 @@ bot.on('ready', function() {
 			//Envoie des dossiers pour la commande dossier
 			case config.prefix + "send":
 				if (args[1] === "dossier") {
-					if(message.guild.owner.user === message.author) {
-						
-						dossier["dossier-" + (Object.keys(dossier).length + 1)] = args[2];
-						fs.writeFile("./json/dossier.json", JSON.stringify(dossier));
-                        message.delete().catch(console.error);
-						message.channel.send("Le dossier à été ajouté au serveur");
+				    if(args.length > 2) {
+                        if (message.guild.owner.user === message.author) {
 
-					} else {
-                        message.delete().catch(console.error);
-						message.channel.send("Tu n'as pas les droits");
-					}
-					break;
+                            dossier["dossier-" + (Object.keys(dossier).length + 1)] = args[2];
+                            fs.writeFile("./json/dossier.json", JSON.stringify(dossier));
+                            message.delete().catch(console.error);
+                            message.channel.send("Le dossier à été ajouté au serveur");
+
+                        } else {
+                            message.delete().catch(console.error);
+                            message.channel.send("Tu n'as pas les droits");
+                        }
+                        break;
+                    } else { message.channel.send("les conditions ne sont pas respectées :wink:")}
 				}
 				break;
 
@@ -855,4 +902,4 @@ bot.on('ready', function() {
 });
 
 
-bot.login(process.env.TOKEN);
+bot.login(config.token);

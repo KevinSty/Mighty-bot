@@ -1,3 +1,6 @@
 {
-  "prefix" : "$"
+  "prefix" : "%",
+  "token" : process.env.TOKEN,
+  "mail" : process.env.MAIL,
+  "passmail" : process.env.PASSMAIL
 }
