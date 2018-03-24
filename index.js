@@ -215,7 +215,7 @@ bot.on('ready', function() {
                 if(data[message.author.id].money - pari >= 0) {
 
 
-                    data[message.author.id].money = data[message.author.id].money - pari;
+                    data[message.author.id].money = (data[message.author.id].money - pari);
                     fs.writeFile("./json/data.json", JSON.stringify(data));
                     if (args[1].toLowerCase() === "rock") {
                         duelYImg = hunter.pierre;
@@ -290,11 +290,11 @@ bot.on('ready', function() {
 
                     if (duel === "Bravo") {
                         message.reply("Bravo, tu as gagné " + (2 * pari) + " :dollar:");
-                        data[message.author.id].money = data[message.author.id].money + (2 * pari);
+                        data[message.author.id].money = (data[message.author.id].money + (2 * pari));
                         fs.writeFile("./json/data.json", JSON.stringify(data));
                     } else if (duel === "Match nul") {
                         message.reply("Dommage, tu ne gagnes rien");
-                        data[message.author.id].money = data[message.author.id].money + pari;
+                        data[message.author.id].money = (data[message.author.id].money + pari);
                         fs.writeFile("./json/data.json", JSON.stringify(data));
                     } else {
                         message.reply("Send nudes et je te laisse gagner")
