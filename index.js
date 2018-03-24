@@ -287,7 +287,8 @@ bot.on('ready', function() {
 
                     if (duel === "Bravo") {
                         message.reply("Bravo, tu as gagné " + (2 * pari) + " :dollar:");
-                        data[message.author.id].money += pari;
+			data[message.author.id].money -= pari;    
+                        data[message.author.id].money += (2*pari);
                         fs.writeFile("./json/data.json", JSON.stringify(data));
                     } else if (duel === "Match nul") {
                         message.reply("Dommage, tu ne gagnes rien");
