@@ -355,10 +355,17 @@ bot.on('ready', function() {
                 } else {
 
                     if(args[0].charAt(1) === "@") {
-                        id = args[0];
-                        id = id.substring(2, id.length - 1);
-                        args[0] = id;
-                        args[0] = bot.users.get(args[0]).username;
+                        if(args[0].charAt(2) === "!") {
+                            id = args[0];
+                            id = id.substring(3, id.length - 1);
+                            args[0] = id;
+                            args[0] = bot.users.get(args[0]).username;
+                        } else {
+                            id = args[0];
+                            id = id.substring(2, id.length - 1);
+                            args[0] = id;
+                            args[0] = bot.users.get(args[0]).username;
+                        }
                     }
                     titleHug = message.author.username + " hug " + args[0];
                 }
@@ -381,10 +388,17 @@ bot.on('ready', function() {
                 } else {
 
                     if(args[0].charAt(1) === "@") {
-                        id = args[0];
-                        id = id.substring(2, id.length - 1);
-                        args[0] = id;
-                        args[0] = bot.users.get(args[0]).username;
+                        if(args[0].charAt(2) === "!") {
+                            id = args[0];
+                            id = id.substring(3, id.length - 1);
+                            args[0] = id;
+                            args[0] = bot.users.get(args[0]).username;
+                        } else {
+                            id = args[0];
+                            id = id.substring(2, id.length - 1);
+                            args[0] = id;
+                            args[0] = bot.users.get(args[0]).username;
+                        }
                     }
                     titleKiss = message.author.username + " kiss " + args[0];
                 }
@@ -407,10 +421,17 @@ bot.on('ready', function() {
                 } else {
 
                     if(args[0].charAt(1) === "@") {
-                        id = args[0];
-                        id = id.substring(2, id.length - 1);
-                        args[0] = id;
-                        args[0] = bot.users.get(args[0]).username;
+                        if(args[0].charAt(2) === "!") {
+                            id = args[0];
+                            id = id.substring(3, id.length - 1);
+                            args[0] = id;
+                            args[0] = bot.users.get(args[0]).username;
+                        } else {
+                            id = args[0];
+                            id = id.substring(2, id.length - 1);
+                            args[0] = id;
+                            args[0] = bot.users.get(args[0]).username;
+                        }
                     }
                     titlePat = message.author.username + " pat " + args[0];
                 }
@@ -433,10 +454,17 @@ bot.on('ready', function() {
                 } else {
 
                     if(args[0].charAt(1) === "@") {
-                        id = args[0];
-                        id = id.substring(2, id.length - 1);
-                        args[0] = id;
-                        args[0] = bot.users.get(args[0]).username;
+                        if(args[0].charAt(2) === "!") {
+                            id = args[0];
+                            id = id.substring(3, id.length - 1);
+                            args[0] = id;
+                            args[0] = bot.users.get(args[0]).username;
+                        } else {
+                            id = args[0];
+                            id = id.substring(2, id.length - 1);
+                            args[0] = id;
+                            args[0] = bot.users.get(args[0]).username;
+                        }
                     }
                     titlePunch = message.author.username + " punch " + args[0];
                 }
@@ -459,10 +487,17 @@ bot.on('ready', function() {
                 } else {
 
                     if(args[0].charAt(1) === "@") {
-                        id = args[0];
-                        id = id.substring(2, id.length - 1);
-                        args[0] = id;
-                        args[0] = bot.users.get(args[0]).username;
+                        if(args[0].charAt(2) === "!") {
+                            id = args[0];
+                            id = id.substring(3, id.length - 1);
+                            args[0] = id;
+                            args[0] = bot.users.get(args[0]).username;
+                        } else {
+                            id = args[0];
+                            id = id.substring(2, id.length - 1);
+                            args[0] = id;
+                            args[0] = bot.users.get(args[0]).username;
+                        }
                     }
                     titleKill = message.author.username + " kill " + args[0];
                 }
@@ -485,10 +520,17 @@ bot.on('ready', function() {
                 } else {
 
                     if(args[0].charAt(1) === "@") {
-                        id = args[0];
-                        id = id.substring(2, id.length - 1);
-                        args[0] = id;
-                        args[0] = bot.users.get(args[0]).username;
+                        if(args[0].charAt(2) === "!") {
+                            id = args[0];
+                            id = id.substring(3, id.length - 1);
+                            args[0] = id;
+                            args[0] = bot.users.get(args[0]).username;
+                        } else {
+                            id = args[0];
+                            id = id.substring(2, id.length - 1);
+                            args[0] = id;
+                            args[0] = bot.users.get(args[0]).username;
+                        }
                     }
                     titleSpank = message.author.username + " spank " + args[0];
                 }
@@ -511,10 +553,17 @@ bot.on('ready', function() {
                 } else {
 
                     if(args[0].charAt(1) === "@") {
-                        id = args[0];
-                        id = id.substring(2, id.length - 1);
-                        args[0] = id;
-                        args[0] = bot.users.get(args[0]).username;
+                        if(args[0].charAt(2) === "!") {
+                            id = args[0];
+                            id = id.substring(3, id.length - 1);
+                            args[0] = id;
+                            args[0] = bot.users.get(args[0]).username;
+                        } else {
+                            id = args[0];
+                            id = id.substring(2, id.length - 1);
+                            args[0] = id;
+                            args[0] = bot.users.get(args[0]).username;
+                        }
                     }
                     titleStare = message.author.username + " stare at " + args[0];
                 }
@@ -537,10 +586,17 @@ bot.on('ready', function() {
                 } else {
 
                     if(args[0].charAt(1) === "@") {
-                        id = args[0];
-                        id = id.substring(2, id.length - 1);
-                        args[0] = id;
-                        args[0] = bot.users.get(args[0]).username;
+                        if(args[0].charAt(2) === "!") {
+                            id = args[0];
+                            id = id.substring(3, id.length - 1);
+                            args[0] = id;
+                            args[0] = bot.users.get(args[0]).username;
+                        } else {
+                            id = args[0];
+                            id = id.substring(2, id.length - 1);
+                            args[0] = id;
+                            args[0] = bot.users.get(args[0]).username;
+                        }
                     }
                     titleLick = message.author.username + " lick " + args[0];
                 }
@@ -563,10 +619,17 @@ bot.on('ready', function() {
                 } else {
 
                     if(args[0].charAt(1) === "@") {
-                        id = args[0];
-                        id = id.substring(2, id.length - 1);
-                        args[0] = id;
-                        args[0] = bot.users.get(args[0]).username;
+                        if(args[0].charAt(2) === "!") {
+                            id = args[0];
+                            id = id.substring(3, id.length - 1);
+                            args[0] = id;
+                            args[0] = bot.users.get(args[0]).username;
+                        } else {
+                            id = args[0];
+                            id = id.substring(2, id.length - 1);
+                            args[0] = id;
+                            args[0] = bot.users.get(args[0]).username;
+                        }
                     }
                     titleTickle = message.author.username + " tickle " + args[0];
                 }
@@ -589,10 +652,17 @@ bot.on('ready', function() {
                 } else {
 
                     if(args[0].charAt(1) === "@") {
-                        id = args[0];
-                        id = id.substring(2, id.length - 1);
-                        args[0] = id;
-                        args[0] = bot.users.get(args[0]).username;
+                        if(args[0].charAt(2) === "!") {
+                            id = args[0];
+                            id = id.substring(3, id.length - 1);
+                            args[0] = id;
+                            args[0] = bot.users.get(args[0]).username;
+                        } else {
+                            id = args[0];
+                            id = id.substring(2, id.length - 1);
+                            args[0] = id;
+                            args[0] = bot.users.get(args[0]).username;
+                        }
                     }
                     titleBite = message.author.username + " bite " + args[0];
                 }
@@ -651,16 +721,30 @@ bot.on('ready', function() {
                 }
 
                 if(args[1].charAt(1) === "@") {
-                    id = args[1];
-                    id = id.substring(2, id.length - 1);
-                    args[1] = id;
-                    args[1] = bot.users.get(args[1]).username;
+                    if(args[1].charAt(2) === "!") {
+                        id = args[1];
+                        id = id.substring(3, id.length - 1);
+                        args[1] = id;
+                        args[1] = bot.users.get(args[1]).username;
+                    } else {
+                        id = args[1];
+                        id = id.substring(2, id.length - 1);
+                        args[1] = id;
+                        args[1] = bot.users.get(args[1]).username;
+                    }
                 }
                 if(args[2].charAt(1) === "@") {
-                    id = args[2];
-                    id = id.substring(2, id.length - 1);
-                    args[2] = id;
-                    args[2] = bot.users.get(args[2]).username;
+                    if(args[2].charAt(2) === "!") {
+                        id = args[2];
+                        id = id.substring(3, id.length - 1);
+                        args[2] = id;
+                        args[2] = bot.users.get(args[2]).username;
+                    } else {
+                        id = args[2];
+                        id = id.substring(2, id.length - 1);
+                        args[2] = id;
+                        args[2] = bot.users.get(args[2]).username;
+                    }
                 }
 
                 txt1 = args[1].substring(0,args[1].length/2);
@@ -802,24 +886,43 @@ bot.on('ready', function() {
                         message.channel.send(ProfilEmbed);
 
                     } else {
+                        if(args[1].charAt(2) !== "!") {
+                            id = args[1];
+                            id = id.substring(3, id.length - 1);
+                            if (!data[id]) {
+                                data[id] = {
+                                    money: 0,
+                                    lastDaily: "Not Collected",
+                                    nbrDaily: 0
+                                };
+                                fs.writeFile("./json/data.json", JSON.stringify(data));
+                            }
 
-                        id = args[1];
-                        id = id.substring(2, id.length - 1);
-                        if(!data[id]) {
-                            data[id] = {
-                                money: 0,
-                                lastDaily:"Not Collected",
-                                nbrDaily:0
-                            };
-                            fs.writeFile("./json/data.json", JSON.stringify(data));
+                            const ProfilEmbed = new Discord.RichEmbed()
+                                .setColor(0xfe9b14)
+                                .setTitle(message.mentions.users.first().username)
+                                .setDescription("Money : " + data[id].money + " :dollar:")
+                                .setThumbnail(message.mentions.users.first().displayAvatarURL);
+                            message.channel.send(ProfilEmbed);
+                        } else {
+                            id = args[1];
+                            id = id.substring(2, id.length - 1);
+                            if (!data[id]) {
+                                data[id] = {
+                                    money: 0,
+                                    lastDaily: "Not Collected",
+                                    nbrDaily: 0
+                                };
+                                fs.writeFile("./json/data.json", JSON.stringify(data));
+                            }
+
+                            const ProfilEmbed = new Discord.RichEmbed()
+                                .setColor(0xfe9b14)
+                                .setTitle(message.mentions.users.first().username)
+                                .setDescription("Money : " + data[id].money + " :dollar:")
+                                .setThumbnail(message.mentions.users.first().displayAvatarURL);
+                            message.channel.send(ProfilEmbed);
                         }
-
-                        const ProfilEmbed = new Discord.RichEmbed()
-                            .setColor(0xfe9b14)
-                            .setTitle(message.mentions.users.first().username)
-                            .setDescription("Money : " + data[id].money + " :dollar:")
-                            .setThumbnail(message.mentions.users.first().displayAvatarURL);
-                        message.channel.send(ProfilEmbed);
                     }
                 }
                 break;
