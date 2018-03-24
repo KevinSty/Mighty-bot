@@ -50,15 +50,15 @@ bot.on('ready', function() {
                     let transporter = nodemailer.createTransport({
                         service: 'Hotmail',
                         auth: {
-                            user: config.mail,
-                            pass: config.passmail
+                            user: process.env.MAIL,
+                            pass: process.env.PASSMAIL
                         }
                     });
 
                     if (args[1] === "dossier") {
                         let mailOptions = {
-                            from: config.mail,
-                            to: config.mail,
+                            from: process.env.MAIL,
+                            to: process.env.MAIL,
                             subject: 'dossier.json',
                             text: JSON.stringify(dossier)
                         };
@@ -72,8 +72,8 @@ bot.on('ready', function() {
                         });
                     } else if (args[1] === "data") {
                         let mailOptions = {
-                            from: config.mail,
-                            to: config.mail,
+                            from: process.env.MAIL,
+                            to: process.env.MAIL,
                             subject: 'data.json',
                             text: JSON.stringify(data)
                         };
@@ -902,4 +902,4 @@ bot.on('ready', function() {
 });
 
 
-bot.login(config.token);
+bot.login(process.env.TOKEN);
