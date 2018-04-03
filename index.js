@@ -24,7 +24,7 @@ const dossier = require("./json/dossier.json");
 
 
 bot.on('ready', function() {
-   // bot.user.setAvatar('./avatar.png').catch(console.error);
+    // bot.user.setAvatar('./avatar.png').catch(console.error);
     bot.user.setActivity('tuer des enfants (' + config.prefix + 'help)').catch(console.error);
 
 })
@@ -32,16 +32,14 @@ bot.on('ready', function() {
 
     .on('message', async message => {
 
+        if(message.content.substring().indexOf("first")) { message.delete().catch(console.error) }
+
         let args = message.content.substring().split(" ");
 
-        if(message.content.indexOf(config.prefix) !== 0 && args[0].toLowerCase() !== "first") return;
+        if(message.content.indexOf(config.prefix) !== 0) return;
         if(message.author.bot) return;
 
         switch (args[0].toLowerCase()) {
-            //supprime tout les first
-            case "first":
-                message.delete().catch(console.error);
-                break;
 
             //envoie un mail contenant dossier.json et data.json
             case config.prefix + "save":
@@ -115,7 +113,7 @@ bot.on('ready', function() {
                         "**reverse** : Répéte à l'envers et supprime le message de l'utilisateur \n" +
                         "**roulette** : Choisi quelqu'un de manière random \n" +
                         "**say** : Répéte et supprime le message de l'utilisateur \n" +
-			            "**send dossier** : Envoie des dossiers pour la commande dossier \n" +
+                        "**send dossier** : Envoie des dossiers pour la commande dossier \n" +
                         "**sexy** : Donne le classement des personnes sexy \n" +
                         "**spank** : Met une fessée \n" +
                         "**stare** : Observe \n"+
@@ -145,7 +143,7 @@ bot.on('ready', function() {
                 message.channel.send(sayMessage);
 
                 break;
-				
+
             //efface les 200 derniers messages
             case config.prefix + "clean":
 
@@ -332,14 +330,14 @@ bot.on('ready', function() {
 
                     if (duel === "Bravo") {
                         message.reply("Bravo, tu as gagné " + (2 * pari) + " :dollar:");
-			            data[message.author.id].money -= pari;
+                        data[message.author.id].money -= pari;
                         data[message.author.id].money += (2*pari);
                         fs.writeFile("./json/data.json", JSON.stringify(data));
                     } else if (duel === "Match nul") {
                         message.reply("Dommage, tu ne gagnes rien");
                     } else {
-			            data[message.author.id].money -= pari;
-                    	fs.writeFile("./json/data.json", JSON.stringify(data));    
+                        data[message.author.id].money -= pari;
+                        fs.writeFile("./json/data.json", JSON.stringify(data));
                         message.reply("Send nudes et je te laisse gagner")
                     }
                 } else {message.reply("T'as pas assez d'argent sale pauvre")}
@@ -819,11 +817,11 @@ bot.on('ready', function() {
                     } else {message.channel.send("Il n'y a aucun dossier")}
                 } else {message.channel.send("Pour pouvoir faire cette commande il faut au moins avoir fait 20 daily, tu as fait " + data[message.author.id].nbrDaily + " daily")}
                 break;
-				
-			//Envoie des dossiers pour la commande dossier
-			case config.prefix + "send":
-				if (args[1] === "dossier") {
-				    if(args.length > 2) {
+
+            //Envoie des dossiers pour la commande dossier
+            case config.prefix + "send":
+                if (args[1] === "dossier") {
+                    if(args.length > 2) {
                         if (message.guild.owner.user === message.author) {
 
                             dossier["dossier-" + (Object.keys(dossier).length + 1)] = args[2];
@@ -837,10 +835,10 @@ bot.on('ready', function() {
                         }
                         break;
                     } else { message.channel.send("les conditions ne sont pas respectées :wink:")}
-				}
-				break;
+                }
+                break;
 
-			//Affiche l'argent du joueur
+            //Affiche l'argent du joueur
             case config.prefix + "profil":
 
                 if (args.length < 2) {
@@ -1002,7 +1000,7 @@ bot.on('ready', function() {
                 break;*/
 
         }
-});
+    });
 
 
 bot.login(process.env.TOKEN);
