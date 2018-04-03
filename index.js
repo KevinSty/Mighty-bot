@@ -32,7 +32,7 @@ bot.on('ready', function() {
 
     .on('message', async message => {
 
-        if(message.content.substring().indexOf("first")) { message.delete().catch(console.error) }
+        if(message.content.substring().indexOf("first") == true ) { message.delete().catch(console.error) }
 
         let args = message.content.substring().split(" ");
 
