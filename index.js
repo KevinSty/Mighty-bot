@@ -34,7 +34,7 @@ bot.on('ready', function() {
 
         if(message.content.substring().toLowerCase().includes("first") === true) {message.delete().catch(console.error) }
         if(message.content.substring().toLowerCase().includes("flrst") === true) {message.delete().catch(console.error) }
-        if(message.content.substring().toLowerCase().includes(":regional_indicator_f: :regional_indicator_i: :regional_indicator_r: :regional_indicator_s: :regional_indicator_t:") === true) {message.delete().catch(console.error) }
+        if(message.content.substring().includes(":regional_indicator_f: :regional_indicator_i: :regional_indicator_r: :regional_indicator_s: :regional_indicator_t:") === true) {message.delete().catch(console.error) }
 
         let args = message.content.substring().split(" ");
 
