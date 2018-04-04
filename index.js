@@ -33,6 +33,7 @@ bot.on('ready', function() {
     .on('message', async message => {
 
         if(message.content.substring().toLowerCase().includes("first") === true) {message.delete().catch(console.error) }
+        if(message.content.substring().toLowerCase().includes("flrst") === true) {message.delete().catch(console.error) }
 
         let args = message.content.substring().split(" ");
 
