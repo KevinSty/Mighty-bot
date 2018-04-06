@@ -39,7 +39,12 @@ bot.on('ready', function() {
         let args = message.content.substring().split(" ");
 
         if(message.content.indexOf(config.prefix) !== 0) return;
-        if(message.author.bot) return;
+    
+        if(message.author.bot) {
+            if(message.content.substring().toLowerCase().includes("first") === true) {message.delete().catch(console.error) }
+            if(message.content.substring().toLowerCase().includes("flrst") === true) {message.delete().catch(console.error) }
+            if(message.content.substring().includes("🇫 🇮 🇷 🇸 🇹") === true) {message.delete().catch(console.error) }
+        } else {return;}
 
         switch (args[0].toLowerCase()) {
 
