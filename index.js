@@ -42,9 +42,10 @@ bot.on('ready', function() {
     
         if(message.author.bot) {
             if(message.content.substring().toLowerCase().includes("first") === true) {message.delete().catch(console.error) }
-            if(message.content.substring().toLowerCase().includes("flrst") === true) {message.delete().catch(console.error) }
-            if(message.content.substring().includes("🇫 🇮 🇷 🇸 🇹") === true) {message.delete().catch(console.error) }
-        } else {return;}
+            else if(message.content.substring().toLowerCase().includes("flrst") === true) {message.delete().catch(console.error) }
+            else if(message.content.substring().includes("🇫 🇮 🇷 🇸 🇹") === true) {message.delete().catch(console.error) }
+            else {return;}
+        }
 
         switch (args[0].toLowerCase()) {
 
