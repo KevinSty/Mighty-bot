@@ -18,6 +18,9 @@ const stare = require("./json/stare.json");
 const lick = require("./json/lick.json");
 const tickle = require("./json/tickle.json");
 const bite = require("./json/bite.json");
+const stalk = require("./json/stalk.json");
+const pout = require("./json/pout.json");
+const cry = require("./json/cry.json");
 const hunter = require("./json/hunter.json");
 const data = require("./json/data.json");
 const dossier = require("./json/dossier.json");
@@ -35,15 +38,19 @@ bot.on('ready', function() {
         if(message.content.substring().toLowerCase().includes("first") === true) {message.delete().catch(console.error) }
         if(message.content.substring().toLowerCase().includes("flrst") === true) {message.delete().catch(console.error) }
         if(message.content.substring().includes("🇫 🇮 🇷 🇸 🇹") === true) {message.delete().catch(console.error) }
+        if(message.content.substring().includes("1st") === true) {message.delete().catch(console.error) }
+        if(message.content.substring().includes("1rst") === true) {message.delete().catch(console.error) }
 
         let args = message.content.substring().split(" ");
 
         if(message.content.indexOf(config.prefix) !== 0) return;
-    
+
         if(message.author.bot) {
             if(message.content.substring().toLowerCase().includes("first") === true) {message.delete().catch(console.error) }
             else if(message.content.substring().toLowerCase().includes("flrst") === true) {message.delete().catch(console.error) }
             else if(message.content.substring().includes("🇫 🇮 🇷 🇸 🇹") === true) {message.delete().catch(console.error) }
+            else if(message.content.substring().includes("1st") === true) {message.delete().catch(console.error) }
+            else if(message.content.substring().includes("1rst") === true) {message.delete().catch(console.error) }    
             else {return;}
         }
 
@@ -105,6 +112,7 @@ bot.on('ready', function() {
                         "**avatar** : Montre l'avatar \n" +
                         "**bite** : Mord \n" +
                         "**clean** : Efface les 200 derniers messages\n" +
+                        "**cry** : Pleure \n" +
                         "**daily** : Récompense journalière et indique l'argent\n" +
                         "**dossier** : Envoie un dossier random contre 2000 :dollar:\n" +
                         "**fusion** : fusionne 2 mots ou pseudo \n" +
@@ -115,15 +123,18 @@ bot.on('ready', function() {
                         "**kiss** : Embrasse \n" +
                         "**lick** : Léche \n" +
                         "**pat** : Pat \n" +
-                        "**ping** : Indique le ping \n" +
+                        "**ping** : Indique l'état du bot' \n" +
                         "**profil** : Affiche le profil \n" +
+                        "**pout** : Boude \n" +
                         "**punch** : Tape \n" +
                         "**reverse** : Répéte à l'envers et supprime le message de l'utilisateur \n" +
                         "**roulette** : Choisi quelqu'un de manière random \n" +
+                        "**select** : Choisi une proposition \n" +
                         "**say** : Répéte et supprime le message de l'utilisateur \n" +
                         "**send dossier** : Envoie des dossiers pour la commande dossier \n" +
                         "**sexy** : Donne le classement des personnes sexy \n" +
                         "**spank** : Met une fessée \n" +
+                        "**stalk** : Stalk\n" +
                         "**stare** : Observe \n"+
                         "**tickle** : Chatouille \n"+
                         "**tu veux un god ?** : Phrase mythique \n" +
@@ -135,7 +146,12 @@ bot.on('ready', function() {
 
             //permet de connaitre son ping
             case config.prefix + "ping":
-                message.channel.send("Votre ping est de " + bot.ping + " ms");
+
+                let info = `**${message.guild.members.get(bot.user.id).nick || bot.user.username}** : ${bot.users.size} user${bot.users.size==1 ? "" : "s"} sur ${bot.guilds.size} serveur${bot.guilds.size==1 ? "" : "s"}`;
+                if(config.hosting_url) {
+                    info += `. Info: <${config.hosting_url}>`;
+                }
+                message.channel.send(info);
                 break;
 
             //répéte ce que l'utilisateur dit et supprime son message
@@ -681,6 +697,85 @@ bot.on('ready', function() {
                 message.channel.send(BiteEmbed);
                 break;
 
+            //stalk
+            case config.prefix + "stalk":
+                args.shift();
+                let linkStalk = stalk["stalk-" + Math.floor(Math.random() * 5)];
+
+                if (args.length < 1) {
+                    titleStalk = "Mighty-bot stalk " + message.author.username;
+                } else {
+
+                    if(args[0].charAt(1) === "@") {
+                        if(args[0].charAt(2) === "!") {
+                            id = args[0];
+                            id = id.substring(3, id.length - 1);
+                            args[0] = id;
+                            args[0] = bot.users.get(args[0]).username;
+                        } else {
+                            id = args[0];
+                            id = id.substring(2, id.length - 1);
+                            args[0] = id;
+                            args[0] = bot.users.get(args[0]).username;
+                        }
+                    }
+                    titleStalk = message.author.username + " stalk " + args[0];
+                }
+
+                const StalkEmbed = new Discord.RichEmbed()
+                    .setColor(0xfe9b14)
+                    .setTitle(titleStalk)
+                    .setImage(linkStalk)
+                    .setTimestamp();
+                message.channel.send(StalkEmbed);
+                break;   
+
+            //pout
+            case config.prefix + "pout":
+                args.shift();
+                let linkPout = pout["pout-" + Math.floor(Math.random() * 5)];
+
+                if (args.length < 1) {
+                    titlePout = message.author.username + " boude";
+                } else {
+
+                    if(args[0].charAt(1) === "@") {
+                        if(args[0].charAt(2) === "!") {
+                            id = args[0];
+                            id = id.substring(3, id.length - 1);
+                            args[0] = id;
+                            args[0] = bot.users.get(args[0]).username;
+                        } else {
+                            id = args[0];
+                            id = id.substring(2, id.length - 1);
+                            args[0] = id;
+                            args[0] = bot.users.get(args[0]).username;
+                        }
+                    }
+                    titlePout = message.author.username + " boude " + args[0];
+                }
+
+                const PoutEmbed = new Discord.RichEmbed()
+                    .setColor(0xfe9b14)
+                    .setTitle(titlePout)
+                    .setImage(linkPout)
+                    .setTimestamp();
+                message.channel.send(PoutEmbed);
+                break;     
+
+            //cry
+            case config.prefix + "cry":
+                args.shift();
+                let linkCry = cry["cry-" + Math.floor(Math.random() * 11)];
+
+                const CryEmbed = new Discord.RichEmbed()
+                    .setColor(0xfe9b14)
+                    .setTitle(message.author.username + " pleure")
+                    .setImage(linkCry)
+                    .setTimestamp();
+                message.channel.send(CryEmbed);
+                break;    
+
             //donne un classement des personnes les plus sexy du serveur (random) avec l'hote du serveur toujours 1er
             case config.prefix + "sexy":
 
@@ -958,6 +1053,21 @@ bot.on('ready', function() {
                 args.shift();
                 message.channel.send("https://www.google.fr/search?q=" + args.join("+"));
                 break;
+
+            case config.prefix + "select":
+
+                args.shift();
+                let text = args.join(" ");
+                args = text.split("|");
+
+                if (args.length < 2) {
+                    message.channel.send("Veuillez mettre au moins 2 choix (séparé par \"|\")");
+                } else {
+                    select = Math.floor(Math.random() * args.length);
+                    message.channel.send("Je choisis : ``" + args[select] + "``");
+                }
+
+                break;    
 
             //Envoie un lien MyAnimeList vers l'anime recherché
             /*case config.prefix + "anime":
