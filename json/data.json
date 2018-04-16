@@ -1,7 +1,7 @@
 {"278930590353588227":
-  {"money":400,
-  "lastDaily":"04/02/2018",
-  "nbrDaily":4},
+  {"money":800,
+  "lastDaily":"04/13/2018",
+  "nbrDaily":8},
   "285158139429388289":
   {"money":400,
     "lastDaily":"03/28/2018",
@@ -11,31 +11,31 @@
     "lastDaily":"03/26/2018",
     "nbrDaily":2},
   "272008673507672064":
-  {"money":800,
-    "lastDaily":"04/03/2018",
-    "nbrDaily":8},
+  {"money":1200,
+    "lastDaily":"04/16/2018",
+    "nbrDaily":12},
   "336819641274073089":
-  {"money":600,
-    "lastDaily":"04/03/2018",
-    "nbrDaily":6},
-  "341378428072624128":
-  {"money":900,
-    "lastDaily":"04/03/2018",
+  {"money":800,
+    "lastDaily":"04/09/2018",
     "nbrDaily":8},
+  "341378428072624128":
+  {"money":1800,
+    "lastDaily":"04/16/2018",
+    "nbrDaily":16},
   "207911209301835776":
-  {"money":700,
-    "lastDaily":"04/03/2018",
-    "nbrDaily":7},
+  {"money":1400,
+    "lastDaily":"04/16/2018",
+    "nbrDaily":14},
   "343032261807046656":
-  {"money":300,
-    "lastDaily":"04/03/2018",
-    "nbrDaily":3},
+  {"money":500,
+    "lastDaily":"04/06/2018",
+    "nbrDaily":5},
   "336219735689658370":
   {"money":100,
     "lastDaily":"04/02/2018",
     "nbrDaily":1},
   "286951000361926657":
-  {"money":200,
-    "lastDaily":"04/03/2018",
-    "nbrDaily":2}
+  {"money":400,
+    "lastDaily":"04/08/2018",
+    "nbrDaily":4}
 }
