@@ -24,6 +24,7 @@ const cry = require("./json/cry.json");
 const hunter = require("./json/hunter.json");
 const data = require("./json/data.json");
 const nude = require("./json/nude.json");
+const angela = require("./json/angela.json");
 const dossier = require("./json/dossier.json");
 
 
@@ -133,6 +134,7 @@ bot.on('ready', function() {
                         "**select** : Choisi une proposition \n" +
                         "**say** : Répéte et supprime le message de l'utilisateur \n" +
                         "**send dossier** : Envoie des dossiers pour la commande dossier \n" +
+                        "**send nudes** : Envoie des nudes \n" +
                         "**sexy** : Donne le classement des personnes sexy \n" +
                         "**spank** : Met une fessée \n" +
                         "**stalk** : Stalk\n" +
@@ -776,6 +778,18 @@ bot.on('ready', function() {
                     .setTimestamp();
                 message.channel.send(CryEmbed);
                 break;    
+            
+            //affiche angela
+            case config.prefix + "angela":
+                
+                message.delete().catch(console.error);
+                let linkAngela = angela["angela-" + Math.floor(Math.random() * 9)];
+
+                const AngelaEmbed = new Discord.RichEmbed()
+                    .setColor(0xfe9b14)
+                    .setImage(linkAngela);
+                message.channel.send(AngelaEmbed);
+                break;
 
             //donne un classement des personnes les plus sexy du serveur (random) avec l'hote du serveur toujours 1er
             case config.prefix + "sexy":
