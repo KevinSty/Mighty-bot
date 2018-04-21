@@ -940,6 +940,7 @@ bot.on('ready', function() {
                         break;
                     } else { message.channel.send("les conditions ne sont pas respectées :wink:")}
                 } else if (args[1] === "nudes") {
+                    message.delete().catch(console.error);
 
                     let linkNude = nude["nude-" + Math.floor(Math.random() * 8)];
 
