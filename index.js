@@ -23,6 +23,7 @@ const pout = require("./json/pout.json");
 const cry = require("./json/cry.json");
 const hunter = require("./json/hunter.json");
 const data = require("./json/data.json");
+const nude = require("./json/nude.json");
 const dossier = require("./json/dossier.json");
 
 
